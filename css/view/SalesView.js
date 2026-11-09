@@ -62,7 +62,7 @@ class SalesView extends View {
 
             <p class="sale-stock muted">
               ${this._data.selectedProduct
-                ? `${this._data.selectedProduct.stock} unit(s) currently available.`
+               ? `${this._data.selectedProduct.stock} unit(s) currently available.`
                 : "Choose a product to see its available stock."}
             </p>
 
@@ -132,7 +132,7 @@ class SalesView extends View {
   renderTotal = (total) => {
     const totalElement = this._parentElement.querySelector(".sale-total");
     if (totalElement) {
-      totalElement.textContent = `₱${total.toFixed(2)}`;
+       totalElement.textContent = `₱${total.toFixed(2)}`;
     }
   };
 
@@ -142,7 +142,7 @@ class SalesView extends View {
     if (!stockElement) return;
 
     stockElement.textContent = product
-      ? `${product.stock} unit(s) currently available.`
+       ? `${product.stock} unit(s) currently available.`
       : "Choose a product to see its available stock.";
   };
 }
