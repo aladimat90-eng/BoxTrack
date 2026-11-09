@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BoxTrack | Inventory and Sales</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="module" src="./js/controller.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="Image/logo2.png" alt="BoxTrack logo" class="brand__logo">
+      <div>
+        <h1>BoxTrack</h1>
+        <p>Inventory & Sales Management</p>
+      </div>
+    </div>
+    <span class="topbar__label">Inventory &amp; Sales</span>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <p class="sidebar__heading">MAIN MENU</p>
+      <nav class="navigation">
+        <button class="nav-btn nav-btn--active" type="button" data-page="dashboard">
+          <span>▦</span> Dashboard
+        </button>
+        <button class="nav-btn" type="button" data-page="products">
+          <span>▣</span> Products
+        </button>
+        <button class="nav-btn" type="button" data-page="sales">
+          <span>₱</span> Sales
+        </button>
+      </nav>
+      <div class="sidebar__note">
+        <strong>BoxTrack</strong>
+        <p>Keep track of your products, stock, and daily sales.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <section class="page-section" id="dashboard-page">
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">OVERVIEW</p>
+        </div>
+        <div class="dashboard"></div>
+      </section>
+
+      <section class="page-section" id="products-page" hidden>
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">INVENTORY</p>
+        </div>
+        <div class="products"></div>
+      </section>
+
+      <section class="page-section" id="sales-page" hidden>
+        <div class="page-heading">
+          <div>
+            <p class="eyebrow">TRANSACTIONS</p>
+            <h2>Sales Management</h2>
+            <p class="muted">Record sales and automatically update stock.</p>
+          </div>
+        </div>
+        <div class="sales"></div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">BoxTrack · Inventory & Sales Management</footer>
+</body>
+</html>
