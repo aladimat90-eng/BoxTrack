@@ -1,5 +1,5 @@
 
-import View from "./View.js";
+import View from "./css/view/View.js";
 
 class DashboardView extends View {
   _parentElement = document.querySelector(".dashboard");
