@@ -198,7 +198,7 @@ export const recordSale = () => {
   }
 
   if (quantity > product.stock) {
-    throw new Error(`Only ${product.stock} unit(s) are available.`);
+    throw new Error(Only ${product.stock} unit(s) are available.);
   }
 
   const subtotal = product.price * quantity;
@@ -208,82 +208,3 @@ export const recordSale = () => {
     productId: product.id,
     productName: product.name,
     quantity,
-    unitPrice: product.price,
-    subtotal,
-    saleDate: new Date().toISOString()
-  };
-
-  state.sales.unshift(sale);
-  product.stock -= quantity;
-
-  state.selectedProductId = "";
-  state.saleQuantity = 1;
-
-  saveToLocalStorage();
-
-  return sale;
-};
-
-// Dashboard calculations.
-export const getTotalProducts = () => state.products.length;
-
-export const getTotalStock = () => {
-  return state.products.reduce((total, product) => total + product.stock, 0);
-};
-
-export const getTotalSales = () => {
-  return state.sales.reduce((total, sale) => total + sale.subtotal, 0);
-};
-
-export const getLowStockProducts = () => {
-  return state.products.filter(
-    product => product.stock <= product.minimumStock
-  );
-};
-
-export const getRecentSales = () => state.sales.slice(0, 5);
-
-// Get daily sales for the last 7 days.
-export const getSalesChartData = () => {
-  const days = [];
-
-  for (let i = 6; i >= 0; i--) {
-    const date = new Date();
-    date.setHours(0, 0, 0, 0);
-    date.setDate(date.getDate() - i);
-
-    const dateKey = [
-      date.getFullYear(),
-      String(date.getMonth() + 1).padStart(2, "0"),
-      String(date.getDate()).padStart(2, "0")
-    ].join("-");
-
-    days.push({
-      dateKey,
-      label: date.toLocaleDateString("en-PH", {
-        weekday: "short"
-      }),
-      total: 0
-    });
-  }
-
-  state.sales.forEach(sale => {
-    const saleDate = new Date(sale.saleDate);
-
-    if (Number.isNaN(saleDate.getTime())) return;
-
-    const saleKey = [
-      saleDate.getFullYear(),
-      String(saleDate.getMonth() + 1).padStart(2, "0"),
-      String(saleDate.getDate()).padStart(2, "0")
-    ].join("-");
-
-    const day = days.find(item => item.dateKey === saleKey);
-
-    if (day) {
-      day.total += Number(sale.subtotal) || 0;
-    }
-  });
-
-  return days;
-};
