@@ -2,9 +2,9 @@
   // It handles events, asks the model to update data, and refreshes the views.
 
   import * as model from "./model.js";
-  import dashboardView from "./css/views/DashboardView.js";
-  import productView from "./css/views/ProductView.js";
-  import salesView from "./css/views/SalesView.js";
+  import dashboardView from "./css/view/DashboardView.js";
+  import productView from "./css/view/ProductView.js";
+  import salesView from "./css/view/SalesView.js";
 
   // Prepare the dashboard data and display it.
  const renderDashboard = () => {
