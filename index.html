@@ -1,37 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BoxTrack | Inventory and Sales</title>
+
   <link rel="stylesheet" href="./css/style.css">
   <script type="module" src="./controller.js"></script>
 </head>
+
 <body>
   <header class="topbar">
     <div class="brand">
       <div>
         <h1>BoxTrack</h1>
-        <p>Inventory & Sales Management</p>
+        <p>Inventory &amp; Sales Management</p>
       </div>
     </div>
+
     <span class="topbar__label">Inventory &amp; Sales</span>
   </header>
 
   <div class="app-layout">
     <aside class="sidebar">
       <p class="sidebar__heading">MAIN MENU</p>
+
       <nav class="navigation">
         <button class="nav-btn nav-btn--active" type="button" data-page="dashboard">
           <span>▦</span> Dashboard
         </button>
+
         <button class="nav-btn" type="button" data-page="products">
           <span>▣</span> Products
         </button>
+
         <button class="nav-btn" type="button" data-page="sales">
           <span>₱</span> Sales
         </button>
       </nav>
+
       <div class="sidebar__note">
         <strong>BoxTrack</strong>
         <p>Keep track of your products, stock, and daily sales.</p>
@@ -39,22 +47,30 @@
     </aside>
 
     <main class="main-content">
+
+      <!-- Dashboard Page -->
       <section class="page-section" id="dashboard-page">
         <div class="page-heading">
           <div>
             <p class="eyebrow">OVERVIEW</p>
+          </div>
         </div>
+
         <div class="dashboard"></div>
       </section>
 
+      <!-- Products Page -->
       <section class="page-section" id="products-page" hidden>
         <div class="page-heading">
           <div>
             <p class="eyebrow">INVENTORY</p>
+          </div>
         </div>
+
         <div class="products"></div>
       </section>
 
+      <!-- Sales Page -->
       <section class="page-section" id="sales-page" hidden>
         <div class="page-heading">
           <div>
@@ -63,11 +79,15 @@
             <p class="muted">Record sales and automatically update stock.</p>
           </div>
         </div>
+
         <div class="sales"></div>
       </section>
+
     </main>
   </div>
 
-  <footer class="footer">BoxTrack · Inventory & Sales Management</footer>
+  <footer class="footer">
+    BoxTrack · Inventory &amp; Sales Management
+  </footer>
 </body>
 </html>
